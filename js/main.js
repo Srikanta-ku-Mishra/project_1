@@ -81,9 +81,9 @@ function run() {
 
     // Extrude using Depth
 
-    const geometrynew = new CreateGeometry().ExtrudeGEometry1(shape);
-    var mesh1 = new THREE.Mesh(geometrynew, material1);
-    scene.add(mesh1);
+    // const geometrynew = new CreateGeometry().ExtrudeGEometry1(shape);
+    // var mesh1 = new THREE.Mesh(geometrynew, material1);
+    // scene.add(mesh1);
 
     // var geometry2 = new CreateGeometry().ExtrudeSetting2(shape , path)
     // var mesh2 = new THREE.Mesh(geometry2, material1);
@@ -180,6 +180,3 @@ run();
 
 
 
-
-animate();
-//#endregion
