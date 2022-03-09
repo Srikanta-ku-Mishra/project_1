@@ -3,9 +3,8 @@ import * as THREE from 'three';
 import { Red } from '../Constants/constants';
 
 export class CreateCube {
-    length = 10;
-    constructor(CubeHealper) {
-        // Insert values of the Cube
+    constructor() {
+         // Insert the Geometrical values, color and position of the Cube
         var length = 20;
         var width = 20;
         var height = 30;

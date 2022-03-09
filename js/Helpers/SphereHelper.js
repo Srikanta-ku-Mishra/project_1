@@ -4,7 +4,7 @@ import { White } from './../Constants/constants';
 export class CreateSphere {
 
     constructor(SphereHealper) {
-    // Insert values of the Sphere
+        // Insert the Geometrical values, color and position of the Sphere
         var radius = 5;
         var color = White;
         var positionX = -50;
