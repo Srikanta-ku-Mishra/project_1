@@ -1,17 +1,15 @@
 import '/css/style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-// import  {squarePoints} from '../css/assets/SquareShape';
-import { White } from './Constants/constants';
+import { White } from './Constants/ColorConstants';
 import { CreateMaterial } from './Helpers/MaterialHelper';
-// import { createshape } from './Helpers/ShapeHelper';
 import { squarePoints } from '../css/assets/SquareShape';
 import { CreateShape } from './Helpers/ShapeHelper';
 import { CreateGeometry } from './Helpers/GeomertyHelper';
+import { Path } from '../css/assets/path';
 
 
-function run() {
-  //#region Scene
+  //#region Creating Scene , camera and renderer
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer();
@@ -19,50 +17,67 @@ function run() {
   document.body.appendChild(renderer.domElement);
   //#endregion
 
-  //#region Drawing shapes
+  //#region Adding shapes
   function objects() {
 
-    const cube = new CreateShape().Cube();
-    const sphere = new CreateShape().Sphere();
-    const torus = new CreateShape().Torus();
-    const TetraHedron = new CreateShape().TetraHedron();
+    // Adding different shapes using Class and Method(ex - CreateShape)
+    const cube = new CreateShape().cube();
+    const sphere = new CreateShape().sphere();
+    const torus = new CreateShape().torus();
+    const TetraHedron = new CreateShape().tetraHedron();
     scene.add(cube, sphere, torus, TetraHedron);
     //#endregion
 
+    //#region Ongoing Projects(Practicing)
+    debugger //Adding Debugger for Debugging
 
-    //#region Today's Training
-    debugger
-    const points = squarePoints;
-    console.log(points);
-    let i = 0;
-    // forEach loop
+    // Adding Materials using Class and Method(ex - CreateMaterial)
+    const material1 = new CreateMaterial().meshstandardmaterial();
+    // const material2 = new CreateMaterial().meshnormalmaterial(); 
+    // const material3 = new CreateMaterial().meshbasicmaterial();
+    // const material4 = new CreateMaterial().meshnormalmaterial();
+
+    //#region Practices
+    // forEach loop examples
     // points.forEach(myfunction);
     // function myfunction() {
     //   console.log(points[i].point.x, points[i].point.y);
     //   i++;
     // }
 
-    points.forEach(() => {
-      console.log(points[i].point.x, points[i].point.y);
-      i++;
+    // const shape = points.forEach(points => {
+    //   console.log(points.point.x , points.point.y);
+    //   new THREE.Shape([
+    //     new THREE.Vector2(points.point.x , points.point.y),
+    //   ]);
+    // });
+    //#endregion
+
+    // Creating new array and pushing values(Co-ordinates) from a given file(ex - squareppoints)
+    const newpoints = squarePoints;
+    console.log(newpoints);
+    var new1 = [];
+    newpoints.forEach(point => {
+      console.log(point.point.x, point.point.y)
+      new1.push(point.point.x, point.point.y);
     });
-    //#endregion
-    //#region Materials
-    const material1 = new CreateMaterial().MeshStandardMaterial();
-    // const material2 = new CreateMaterial().MeshNormalMaterial();
-    // const material3 = new CreateMaterial().MeshBasicMaterial();
-    // const material4 = new CreateMaterial().MeshNormalMaterial();
-    //#endregion
+    console.log(new1);
 
-    //#region Current Work is going on
+    // To see the output
+    // console.log(new1[0].point.x , new1[0].point.y )
+    // console.log(new1[1].point.x , new1[1].point.y )
+    // console.log(new1[2].point.x , new1[2].point.y )
+    // console.log(new1[3].point.x , new1[3].point.y )
 
-    // const shape = new THREE.Shape([
-    //   new THREE.Vector2(points[0].point.x, points[0].point.y),
-    //   new THREE.Vector2(points[1].point.x, points[1].point.y),
-    //   new THREE.Vector2(points[2].point.x, points[2].point.y),
-    //   new THREE.Vector2(points[3].point.x, points[3].point.y)
+    // Adding values of shape using array
+    // var shape = new THREE.Shape([
+    //   new THREE.Vector2(new1[0] , new1[1]),
+    //   new THREE.Vector2(new1[2] , new1[3]),
+    //   new THREE.Vector2(new1[4] , new1[5]),
+    //   new THREE.Vector2(new1[6] , new1[7])
     // ]);
 
+    // Adding value to shapes using numbers
     var shape = new THREE.Shape([
       new THREE.Vector2(-20, 60),
       new THREE.Vector2(20, 60),
@@ -70,28 +85,44 @@ function run() {
       new THREE.Vector2(-20, -60)
     ]);
 
-    // var point1 = new THREE.Vector3(0, 0, 0);
-    //   var point2 = new THREE.Vector3(0, 10, depth);
-    //   var path = new THREE.LineCurve3(point1, point2)
+    // Creating new array and pushing values(Co-ordinates) from a file(ex - path)
+    const points = Path;
+    var new2 = [];
+    points.forEach(point => {
+      console.log(point.point.x, point.point.y, point.point.z)
+      new2.push(point.point.x, point.point.y, point.point.z)
+    })
+    console.log(new2);
 
-    // console.log(points[0].point.x , points[0].point.y )
-    // console.log(points[1].point.x , points[1].point.y )
-    // console.log(points[2].point.x , points[2].point.y )
-    // console.log(points[3].point.x , points[3].point.y )
+    // Different Methods to used to print the values of an Array
+    points.map(x => console.log(x.point.x, x.point.y));
+    points.forEach(x => console.log(x.point.x, x.point.y));
 
-    // Extrude using Depth
+    // Experimenting new methods using array
+    // var point1 = [];
+    // var point2 = [];
+    // point1.push(points[0].point.x , points[0].point.y ,points[0].point.z);
+    // point2.push(points[1].point.x , points[1].point.y ,points[1].point.z);
+    // console.log(point1 ,point2);
 
-    const geometrynew = new CreateGeometry().ExtrudeGEometry1(shape);
-    var mesh1 = new THREE.Mesh(geometrynew, material1);
+
+    // Creating path to Extrude the object 
+    var point1 = new THREE.Vector3(new2[0], new2[1], new2[2]);
+    var point2 = new THREE.Vector3(new2[3], new2[4], new2[5]);
+    var path = new THREE.LineCurve3(point1, point2)
+
+
+
+    // Adding Geometries using class and methods(ex - CreateGeometry)
+    const geometry1 = new CreateGeometry().extrudegeometry1(shape);
+    var mesh1 = new THREE.Mesh(geometry1, material1);
     scene.add(mesh1);
 
-    // var geometry2 = new CreateGeometry().ExtrudeSetting2(shape , path)
-    // var mesh2 = new THREE.Mesh(geometry2, material1);
-    // scene.add(mesh2);
+    var geometry2 = new CreateGeometry().extrudegeometry2(shape, path)
+    var mesh2 = new THREE.Mesh(geometry2, material1);
+    scene.add(mesh2);
 
-    // Extrude Using Path
-    // Mesh2
-
+    // Extrude Using Path(Without Using any class)
     // var point1 = new THREE.Vector3(0, 0, 0);
     // var point2 = new THREE.Vector3(0, 10, depth);
     // var path = new THREE.LineCurve3(point1, point2)
@@ -130,16 +161,15 @@ function run() {
   }
   //#endregion
 
-  //#region OrbitControls
+  //#region OrbitControls and Lights
   const controls = new OrbitControls(camera, renderer.domElement);
   camera.position.z = 100;
-  //#endregion
 
-  //#region lights
   function lights() {
     scene.add(new THREE.AmbientLight(White));
   }
   //#endregion
+
   //#region Animate
   function animate() {
     requestAnimationFrame(animate);
@@ -150,8 +180,6 @@ function run() {
   objects();
   lights();
   //#endregion
-}
-run();
 
 
 
@@ -181,5 +209,3 @@ run();
 
 
 
-animate();
-//#endregion

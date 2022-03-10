@@ -1,8 +1,8 @@
 import * as THREE from 'three';
+import { White } from '../../Constants/ColorConstants';
 
-import { White } from './../Constants/constants';
+// It is used to directly add Sphere to the scene...
 export class CreateSphere {
-
     constructor(SphereHealper) {
         // Insert the Geometrical values, color and position of the Sphere
         var radius = 5;
@@ -14,8 +14,7 @@ export class CreateSphere {
         const geo = new THREE.SphereGeometry(radius);
         const mat = new THREE.MeshStandardMaterial({ color: color });
         const sphere = new THREE.Mesh(geo, mat);
-        sphere.position.set(positionX, positionY ,positionZ);
-
+        sphere.position.set(positionX, positionY, positionZ);
         return sphere;
     }
 

@@ -1,3 +1,5 @@
+// Co-ordinates of Square shape 
+
 export const squarePoints = [
     {
         point: {

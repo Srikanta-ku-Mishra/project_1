@@ -1,10 +1,12 @@
+// Co-ordinates of triangular shape
+
 export const TrianglePoints = [
     {
         point: {
             x: 20,
             y: -20
         }
-       
+
     },
     {
         point: {
