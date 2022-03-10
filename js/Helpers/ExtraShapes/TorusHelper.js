@@ -1,8 +1,9 @@
 import * as THREE from 'three';
-import { Aqua } from '../Constants/constants';
+import { Aqua } from '../../Constants/ColorConstants';
 
+// It is used to directly add Torus to the scene...
 export class CreateTorus {
-    constructor(Material){
+    constructor(Material) {
         // Insert the Geometrical values, color and position of the Torus
         var Radius = 10;
         var Tube = 3;
@@ -15,11 +16,12 @@ export class CreateTorus {
         var positionZ = 40;
         var wireframe = true;
 
-        const geometry = new THREE.TorusGeometry(Radius,Tube,RadialSegments,TubularSegements);
-        const material = new THREE.MeshBasicMaterial( { color: color , wireframe: wireframe} );
-        const torus = new THREE.Mesh( geometry, material );
+        const geometry = new THREE.TorusGeometry(Radius, Tube, RadialSegments, TubularSegements); //add arc as your requirment
+        const material = new THREE.MeshBasicMaterial({ color: color, wireframe: wireframe });
+        const torus = new THREE.Mesh(geometry, material);
         torus.position.set(positionX, positionY, positionZ);
-        return torus;   
-        }
-    };
- 
+        return torus;
+    }
+
+};
+

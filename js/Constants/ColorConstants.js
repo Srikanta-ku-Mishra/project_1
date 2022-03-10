@@ -1,3 +1,5 @@
+// Color Constants 
+
 export const White = 0xffffff;
 export const Red = 0xff0000;
 export const Blue = 0x0000ff;

@@ -1,10 +1,11 @@
 import * as THREE from 'three';
-import { Aquamarine } from '../Constants/constants';
+import { Aquamarine } from '../Constants/ColorConstants';
 
+// Working on it...(Not finished yet)
 export class CreateMaterial {
-    constructor() { }
+    constructor() {}
 
-    MeshStandardMaterial() {
+    meshstandardmaterial() {
         let color = null;
         let wireframe = false;
         let roughness = 0;
@@ -22,13 +23,15 @@ export class CreateMaterial {
         });
         return mat;
     }
-    MeshNormalMaterial() {
+    
+    meshnormalmaterial() {
         const mat1 = new THREE.MeshNormalMaterial({
             color: 0xff0000,
         });
         return mat1;
     }
-    MeshBasicMaterial(){
+
+    meshbasicmaterial() {
         let color = Aquamarine;
         const mat2 = new THREE.MeshBasicMaterial({
             color: color,
@@ -36,4 +39,4 @@ export class CreateMaterial {
         return mat2;
     }
 
-}
+};
